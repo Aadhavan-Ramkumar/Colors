@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Colors </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: red; color: white;">
+    <center>
+        <h1> Colors </h1>
+        <hr style="box-shadow: 5px 5px 5px black;"><br><br><br><br>
+    </center>
+    <div id="Colors" class="container">
+        <div id="Color" class="col-lg-6"></div>
+        <h2 id="Hex" class="col-lg-6"> #000000 </h2>
+        <div id="ColorValues">
+            <h3 id="RedTag"> R: <span id="Red"> 0 </span>
+                <button id="RedMinus" class="btn btn-primary" onclick="Value('Decrease', 'Red')" disabled> - </button>
+                <button id="RedPlus" class="btn btn-primary" onclick="Value('Increase', 'Red')"> + </button>
+            </h3>
+            <h3 id="GreenTag"> G: <span id="Green"> 0 </span>
+                <button id="GreenMinus" class="btn btn-primary" onclick="Value('Decrease', 'Green')" disabled> -
+                </button>
+                <button id="GreenPlus" class="btn btn-primary" onclick="Value('Increase', 'Green')"> + </button>
+            </h3>
+            <h3 id="BlueTag"> B: <span id="Blue"> 0 </span>
+                <button id="BlueMinus" class="btn btn-primary" onclick="Value('Decrease', 'Blue')" disabled> - </button>
+                <button id="BluePlus" class="btn btn-primary" onclick="Value('Increase', 'Blue')"> + </button>
+            </h3>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="keys.js"></script>
+</body>
+
+</html>

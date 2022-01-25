@@ -1,0 +1,35 @@
+h1 {
+    text-shadow: 5px 5px 5px black;
+}
+
+#Color {
+    box-shadow: 5px 5px 5px black;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: black;
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin-left: 250px;
+    margin-right: 25px;
+}
+
+#ColorValues {
+    text-shadow: 5px 5px 5px black;
+    padding: 35px;
+    margin-left: 475px;
+}
+
+#ColorValues button {
+    margin-left: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+#Hex {
+    margin-left: 310px;
+    text-shadow: 5px 5px 5px black;
+}
+
+.Focused {
+    border: dashed 2px black;
+}
