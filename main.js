@@ -16,7 +16,7 @@ function Value(Action, Color, Amount) {
     if (Action == "Increase") {
         switch (Color) {
             case "Red":
-                if (Amount == 15 && RedValue >= 239) {
+                if (Amount == 15 && RedValue >= 240) {
                     RedValue = 255;
                 } else {
                     RedValue += Amount;
@@ -39,7 +39,7 @@ function Value(Action, Color, Amount) {
                 }
                 break;
             case "Green":
-                if (Amount == 15 && GreenValue >= 239) {
+                if (Amount == 15 && GreenValue >= 240) {
                     GreenValue = 255;
                 } else {
                     GreenValue += Amount;
@@ -62,7 +62,7 @@ function Value(Action, Color, Amount) {
                 }
                 break;
             case "Blue":
-                if (Amount == 15 && BlueValue >= 239) {
+                if (Amount == 15 && BlueValue >= 240) {
                     BlueValue = 255;
                 } else {
                     BlueValue += Amount;
