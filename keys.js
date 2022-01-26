@@ -3,13 +3,15 @@ RedTag = [document.getElementById("RedTag"), document.getElementById("RedMinus")
 GreenTag = [document.getElementById("GreenTag"), document.getElementById("GreenMinus"), document.getElementById("GreenPlus")];
 BlueTag = [document.getElementById("BlueTag"), document.getElementById("BlueMinus"), document.getElementById("BluePlus")];
 LastFocused = RedTag;
+HexInputTag = document.getElementById("HexInput")
 
-window.addEventListener("keydown", MyKeyDown);
+window.addEventListener("keydown", KeyDown1);
+window.addEventListener("keydown", KeyDown2);
 
-function MyKeyDown(e) {
+function KeyDown1(e) {
     KeyPressed = e.keyCode;
     switch (KeyPressed) {
-        case 32:
+        case 192:
             if (ColorFocused == false) {
                 ColorFocused = true;
                 LastFocused[0].setAttribute("class", "Focused");
@@ -48,13 +50,13 @@ function MyKeyDown(e) {
             if (ColorFocused == true && LastFocused[1].disabled == false) {
                 switch (LastFocused) {
                     case RedTag:
-                        Value("Decrease", "Red");
+                        Value("Decrease", "Red", 1);
                         break;
                     case GreenTag:
-                        Value("Decrease", "Green");
+                        Value("Decrease", "Green", 1);
                         break;
                     case BlueTag:
-                        Value("Decrease", "Blue");
+                        Value("Decrease", "Blue", 1);
                         break;
                 }
             }
@@ -63,16 +65,53 @@ function MyKeyDown(e) {
             if (ColorFocused == true && LastFocused[2].disabled == false) {
                 switch (LastFocused) {
                     case RedTag:
-                        Value("Increase", "Red");
+                        Value("Increase", "Red", 1);
                         break;
                     case GreenTag:
-                        Value("Increase", "Green");
+                        Value("Increase", "Green", 1);
                         break;
                     case BlueTag:
-                        Value("Increase", "Blue");
+                        Value("Increase", "Blue", 1);
                         break;
                 }
             }
             break;
+    }
+}
+
+function KeyDown2(e) {
+    KeyPressed = e.keyCode;
+    if (e.shiftKey == true) {
+        switch (KeyPressed) {
+            case 37:
+                if (ColorFocused == true && LastFocused[1].disabled == false) {
+                    switch (LastFocused) {
+                        case RedTag:
+                            Value("Decrease", "Red", 15);
+                            break;
+                        case GreenTag:
+                            Value("Decrease", "Green", 15);
+                            break;
+                        case BlueTag:
+                            Value("Decrease", "Blue", 15);
+                            break;
+                    }
+                }
+                break;
+            case 39:
+                if (ColorFocused == true && LastFocused[2].disabled == false) {
+                    switch (LastFocused) {
+                        case RedTag:
+                            Value("Increase", "Red", 15);
+                            break;
+                        case GreenTag:
+                            Value("Increase", "Green", 15);
+                            break;
+                        case BlueTag:
+                            Value("Increase", "Blue", 15);
+                            break;
+                    }
+                }
+        }
     }
 }

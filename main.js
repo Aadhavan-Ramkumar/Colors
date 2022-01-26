@@ -12,17 +12,21 @@ BlueHex = "00";
 
 HexTag = document.getElementById("Hex");
 
-function Value(Action, Color) {
+function Value(Action, Color, Amount) {
     if (Action == "Increase") {
         switch (Color) {
             case "Red":
-                RedValue += 1;
+                if (Amount == 15 && RedValue >= 239) {
+                    RedValue = 255;
+                } else {
+                    RedValue += Amount;
+                }
                 Red.innerHTML = RedValue;
                 RedHex = RedValue.toString(16);
                 RedHex = RedHex.length == 1 ? "0" + RedHex : RedHex;
                 Hex = "#" + RedHex + GreenHex + BlueHex;
                 HexTag.innerHTML = Hex;
-                document.getElementById("Color").style.backgroundColor = Hex;
+                ColorDiv.style.backgroundColor = Hex;
                 if (RedValue > 0) {
                     document.getElementById("RedMinus").disabled = false;
                 } else {
@@ -35,13 +39,17 @@ function Value(Action, Color) {
                 }
                 break;
             case "Green":
-                GreenValue += 1;
+                if (Amount == 15 && GreenValue >= 239) {
+                    GreenValue = 255;
+                } else {
+                    GreenValue += Amount;
+                }
                 Green.innerHTML = GreenValue;
                 GreenHex = GreenValue.toString(16);
                 GreenHex = GreenHex.length == 1 ? "0" + GreenHex : GreenHex;
                 Hex = "#" + RedHex + GreenHex + BlueHex;
                 HexTag.innerHTML = Hex;
-                document.getElementById("Color").style.backgroundColor = Hex;
+                ColorDiv.style.backgroundColor = Hex;
                 if (GreenValue > 0) {
                     document.getElementById("GreenMinus").disabled = false;
                 } else {
@@ -54,13 +62,17 @@ function Value(Action, Color) {
                 }
                 break;
             case "Blue":
-                BlueValue += 1;
+                if (Amount == 15 && BlueValue >= 239) {
+                    BlueValue = 255;
+                } else {
+                    BlueValue += Amount;
+                }
                 Blue.innerHTML = BlueValue;
                 BlueHex = BlueValue.toString(16);
                 BlueHex = BlueHex.length == 1 ? "0" + BlueHex : BlueHex;
                 Hex = "#" + RedHex + GreenHex + BlueHex;
                 HexTag.innerHTML = Hex;
-                document.getElementById("Color").style.backgroundColor = Hex;
+                ColorDiv.style.backgroundColor = Hex;
                 if (BlueValue > 0) {
                     document.getElementById("BlueMinus").disabled = false;
                 } else {
@@ -76,13 +88,17 @@ function Value(Action, Color) {
     } else if (Action == "Decrease") {
         switch (Color) {
             case "Red":
-                RedValue -= 1;
+                if (Amount == 15 && RedValue <= 15) {
+                    RedValue = 0;
+                } else {
+                    RedValue -= Amount;
+                }
                 Red.innerHTML = RedValue;
                 RedHex = RedValue.toString(16);
                 RedHex = RedHex.length == 1 ? "0" + RedHex : RedHex;
                 Hex = "#" + RedHex + GreenHex + BlueHex;
                 HexTag.innerHTML = Hex;
-                document.getElementById("Color").style.backgroundColor = Hex;
+                ColorDiv.style.backgroundColor = Hex;
                 if (RedValue > 0) {
                     document.getElementById("RedMinus").disabled = false;
                 } else {
@@ -95,13 +111,17 @@ function Value(Action, Color) {
                 }
                 break;
             case "Green":
-                GreenValue -= 1;
+                if (Amount == 15 && GreenValue <= 15) {
+                    GreenValue = 0;
+                } else {
+                    GreenValue -= Amount;
+                }
                 Green.innerHTML = GreenValue;
                 GreenHex = GreenValue.toString(16);
                 GreenHex = GreenHex.length == 1 ? "0" + GreenHex : GreenHex;
                 Hex = "#" + RedHex + GreenHex + BlueHex;
                 HexTag.innerHTML = Hex;
-                document.getElementById("Color").style.backgroundColor = Hex;
+                ColorDiv.style.backgroundColor = Hex;
                 if (GreenValue > 0) {
                     document.getElementById("GreenMinus").disabled = false;
                 } else {
@@ -114,13 +134,17 @@ function Value(Action, Color) {
                 }
                 break;
             case "Blue":
-                BlueValue -= 1;
+                if (Amount == 15 && BlueValue <= 15) {
+                    BlueValue = 0;
+                } else {
+                    BlueValue -= Amount;
+                }
                 Blue.innerHTML = BlueValue;
                 BlueHex = BlueValue.toString(16);
                 BlueHex = BlueHex.length == 1 ? "0" + BlueHex : BlueHex;
                 Hex = "#" + RedHex + GreenHex + BlueHex;
                 HexTag.innerHTML = Hex;
-                document.getElementById("Color").style.backgroundColor = Hex;
+                ColorDiv.style.backgroundColor = Hex;
                 if (BlueValue > 0) {
                     document.getElementById("BlueMinus").disabled = false;
                 } else {
